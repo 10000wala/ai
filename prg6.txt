@@ -1,0 +1,33 @@
+n=4
+ld=[0]*(2*n-1)
+rd=[0]*(2*n-1)
+cl=[0]*n
+
+def printsolution(board):
+    for i in range(n):
+        for j in range(n):
+            print("Q" if board[i][j]==1 else ".",end="")
+        print()
+
+def solvenqutil(board,col):
+    if col>=n:
+        return True
+    for i in range(n):
+        if ld[i-col+n-1]!=1 and rd[i+col]!=1 and cl[i]!=1:
+            board[i][col]=1
+            ld[i-col+n-1]=rd[i+col]=cl[i]=1
+            if solvenqutil(board,col+1):
+                return True
+            board[i][col]=0
+            ld[i-col+n-1]=rd[i+col]=cl[i]=0
+    return False
+
+def solvenq():
+    board=[[0 for _ in range(n)]for _ in range(n)]
+    if not solvenqutil(board, 0):
+        print("solution doesnt exist")
+        return False
+    printsolution(board)
+    return True
+
+solvenq()
