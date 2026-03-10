@@ -1,0 +1,20 @@
+a = {10,20,30,40,50}
+b = {40,50,60,70,80}
+print("set a:",a)
+print("set b:",b)
+print("\n1.Union : ",a|b)
+print("2.Intersection : ",a&b)
+print("3.Difference(a-b) : ",a-b)
+print("4.Difference(b-a) : ",b-a)
+print("5.Symmetric Difference:",a^b)
+c = {10,20}
+print("\nset c:",c)
+print("is c subset of a?",c.issubset(a))
+print("is a superset of c?",a.issuperset(c))
+d = {80,90}
+print("\nset d:",d)
+print("are a and d disjoint?",d.isdisjoint(a))
+a.add(100)
+print("After adding ,a:",a)
+a.remove(10)
+print("After removing ,a:",a)
