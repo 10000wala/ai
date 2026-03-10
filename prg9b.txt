@@ -1,0 +1,5 @@
+str = input("Enter a string:")
+word = str.split()
+word.sort()
+for w in word:
+print(w)
